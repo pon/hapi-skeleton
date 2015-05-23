@@ -7,7 +7,8 @@
     "test": "test"
   },
   "dependencies": {
-    "hapi": "^8.5.1"
+    "hapi": "^8.5.1",
+    "nconf": "^0.7.1"
   },
   "scripts": {
     "test": "lab -c -p -v",
