@@ -1,0 +1,34 @@
+{
+  "name": "hapi-skeleton",
+  "version": "0.0.0",
+  "description": "Boilerplate code for REST API in hapi",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "hapi": "^8.5.1"
+  },
+  "scripts": {
+    "test": "lab -c -p -v",
+    "start": "node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pon/hapi-skeleton.git"
+  },
+  "keywords": [
+    "API",
+    "hapi"
+  ],
+  "author": "Peter Nagel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pon/hapi-skeleton/issues"
+  },
+  "homepage": "https://github.com/pon/hapi-skeleton",
+  "devDependencies": {
+    "code": "^1.4.0",
+    "lab": "^5.9.0"
+  }
+}
