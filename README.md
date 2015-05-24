@@ -19,5 +19,15 @@ The `lib/services` directory is used for plugins that are re-used across many pa
 var env = server.plugins.config.app.get('NODE_ENV');
 ```
 
+#### Errors
+**Location:** [`/lib/services/errors`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/errors)
+
+**Purpose:** Use [create-boom-error](https://github.com/lob/create-boom-error) to create [boom](https://github.com/hapijs/boom) errors that can be easily accessed and thrown to the API.
+
+**Example:**
+```javascript
+throw new server.plugins.errors.api.ErrorName();
+```
+
 # Testing
 The tests for the application reside in the `/test` directory. The structure of the directory mirrors the code in `/lib` and files are suffixed with `.test.js` rather than just `.js`. I am using [lab](https://github.com/hapijs/lab) for the testing framework and [code](https://github.com/hapijs/code) for the assertion library. The test suite can be run using `npm test`. I will be enforcing 100% code coverage on this repository.
