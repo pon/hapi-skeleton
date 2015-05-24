@@ -19,6 +19,21 @@ The `lib/services` directory is used for plugins that are re-used across many pa
 var env = server.plugins.config.app.get('NODE_ENV');
 ```
 
+#### DB
+**Location:** [`/lib/services/db.js`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/db.js)
+
+**Purpose:** Use [knex.js](http://knexjs.org/) to create a connection to a database. The config is exposed for testing purposes as well as the `knex` object for running queries.
+
+**Example:**
+```javascript
+// Access knex config
+var dbConfig = server.plugins.db.config;
+
+// Access instantiated knex object to run database queries
+var knex = server.plugins.db.knex;
+```
+
+
 #### Errors
 **Location:** [`/lib/services/errors`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/errors)
 

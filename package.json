@@ -7,9 +7,12 @@
     "test": "test"
   },
   "dependencies": {
+    "bookshelf": "^0.8.1",
     "create-boom-error": "^0.1.0",
     "hapi": "^8.5.1",
-    "nconf": "^0.7.1"
+    "knex": "^0.8.6",
+    "nconf": "^0.7.1",
+    "sqlite3": "^3.0.8"
   },
   "scripts": {
     "test": "lab -c -p -v",
