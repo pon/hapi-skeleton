@@ -1,4 +1,7 @@
-# Organization
+# hapi Skeleton API Application
+[![Build Status](https://travis-ci.org/pon/hapi-skeleton.svg?branch=master)](https://travis-ci.org/pon/hapi-skeleton)
+
+## Organization
 - All application code will reside in the `/lib` directory.
 - Use plugins to organize everything
 
