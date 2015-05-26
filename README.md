@@ -19,6 +19,16 @@ The `lib/services` directory is used for plugins that are re-used across many pa
 var env = server.plugins.config.app.get('NODE_ENV');
 ```
 
+#### Errors
+**Location:** [`/lib/services/errors`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/errors)
+
+**Purpose:** Use [create-boom-error](https://github.com/lob/create-boom-error) to create [boom](https://github.com/hapijs/boom) errors that can be easily accessed and thrown to the API.
+
+**Example:**
+```javascript
+throw new server.plugins.errors.api.ErrorName();
+```
+
 #### DB
 **Location:** [`/lib/services/db.js`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/db.js)
 
@@ -33,15 +43,32 @@ var dbConfig = server.plugins.db.config;
 var knex = server.plugins.db.knex;
 ```
 
+#### Models
+**Location:** [`/lib/services/models`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/models)
 
-#### Errors
-**Location:** [`/lib/services/errors`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/errors)
-
-**Purpose:** Use [create-boom-error](https://github.com/lob/create-boom-error) to create [boom](https://github.com/hapijs/boom) errors that can be easily accessed and thrown to the API.
+**Purpose:** Use the [Bookshelf](http://bookshelfjs.org/) ORM and the [https://github.com/lob/hapi-bookshelf-models](https://github.com/lob/hapi-bookshelf-models) plugin to load our models and have them available across the application. This project is already configured to use the [knex.js migration and seed utility](http://knexjs.org/#Migrations). It provides db configuration via [`/db/knexfile.js`](https://github.com/pon/hapi-skeleton/blob/master/db/knexfile.js), and the relevant commands are exposed in the [`package.json`](https://github.com/pon/hapi-skeleton/blob/master/package.json)
 
 **Example:**
 ```javascript
-throw new server.plugins.errors.api.ErrorName();
+// Access the registered `User` model
+var User = server.plugins.bookshelf.model('User');
+```
+
+```bash
+# Create New Migration
+npm run create-migration <name>
+
+# Run Migrations
+npm run migrate
+
+# Rollback Migrations
+npm run rollback
+
+# Create New Seed
+npm run create-seed <name>
+
+# Run Seeds
+npm run seed
 ```
 
 # Testing

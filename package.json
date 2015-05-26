@@ -10,13 +10,20 @@
     "bookshelf": "^0.8.1",
     "create-boom-error": "^0.1.0",
     "hapi": "^8.5.1",
+    "hapi-bookshelf-models": "^1.3.1",
     "knex": "^0.8.6",
     "nconf": "^0.7.1",
     "sqlite3": "^3.0.8"
   },
   "scripts": {
+    "pretest": "npm run migrate && npm run seed",
     "test": "lab -c -p -v",
-    "start": "node lib/index.js"
+    "start": "node lib/index.js",
+    "create-migration": "knex --knexfile db/knexfile.js migrate:make",
+    "migrate": "knex --knexfile db/knexfile.js migrate:latest",
+    "rollback": "knex --knexfile db/knexfile.js migrate:rollback",
+    "create-seed": "knex --knexfile db/knexfile.js seed:make",
+    "seed": "knex --knexfile db/knexfile.js seed:run"
   },
   "repository": {
     "type": "git",
