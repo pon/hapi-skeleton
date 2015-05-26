@@ -74,5 +74,10 @@ npm run create-seed <name>
 npm run seed
 ```
 
+#### Authentication
+**Location:** [`/lib/services/authentication.js`](https://github.com/pon/hapi-skeleton/blob/master/lib/services/authentication.js)
+
+**Purpose:** Use [hapi-auth-basic](https://github.com/hapijs/hapi-auth-basic) to enforce a simple API key based authentication for our API users.
+
 # Testing
 The tests for the application reside in the `/test` directory. The structure of the directory mirrors the code in `/lib` and files are suffixed with `.test.js` rather than just `.js`. I am using [lab](https://github.com/hapijs/lab) for the testing framework and [code](https://github.com/hapijs/code) for the assertion library. The test suite can be run using `npm test`. I will be enforcing 100% code coverage on this repository.

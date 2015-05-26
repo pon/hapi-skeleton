@@ -1,11 +1,13 @@
 // Update with your config settings.
 
+var path = require('path');
+
 module.exports = {
 
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './db.sqlite',
+      filename: path.join(__dirname + '/../db/db.sqlite'),
     },
     migrations: {
       tableName: 'migrations',
@@ -18,7 +20,7 @@ module.exports = {
   test: {
     client: 'sqlite3',
     connection: {
-      filename: './db.sqlite',
+      filename: path.join(__dirname + '/../db/db.sqlite'),
     },
     migrations: {
       tableName: 'migrations',
